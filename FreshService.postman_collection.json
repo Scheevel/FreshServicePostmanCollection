@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "61f8260a-6726-462a-b7ac-770401398579",
+		"_postman_id": "a47355a1-71e0-4a7d-bcd5-59618e0f4dcc",
 		"name": "FreshService",
 		"description": "apiKey is set here on authorization tab",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -11,9 +11,6 @@
 			"item": [
 				{
 					"name": "List all tickets",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -24,7 +21,10 @@
 								"type": "text"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{domainUrl}}/tickets",
 							"host": [
@@ -68,9 +68,6 @@
 				},
 				{
 					"name": "View a ticket",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -81,7 +78,10 @@
 								"type": "text"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{domainUrl}}/tickets/{{ticketId}}",
 							"host": [
@@ -186,9 +186,6 @@
 				},
 				{
 					"name": "List all ticket fields",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -199,7 +196,10 @@
 								"type": "text"
 							}
 						],
-						"body": {},
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
 						"url": {
 							"raw": "{{domainUrl}}/ticket_fields",
 							"host": [
@@ -215,21 +215,6 @@
 				}
 			],
 			"description": "Source Value\r\nEmail\t1\r\nPortal\t2\r\nPhone\t3\r\nChat\t4\r\nFeedback widget\t5\r\nYammer\t6\r\nAWS Cloudwatch\t7\r\nPagerduty\t8\r\nWalkup\t9\r\nSlack\t10\r\n\r\nStatus\tValue\r\nOpen\t2\r\nPending\t3\r\nResolved\t4\r\nClosed\t5\r\n\r\nPriorities\tValue\r\nLow\t1\r\nMedium\t2\r\nHigh\t3\r\nUrgent\t4",
-			"auth": {
-				"type": "basic",
-				"basic": [
-					{
-						"key": "password",
-						"value": "x",
-						"type": "string"
-					},
-					{
-						"key": "username",
-						"value": "{{apiKey}}",
-						"type": "string"
-					}
-				]
-			},
 			"event": [
 				{
 					"listen": "prerequest",
@@ -699,21 +684,6 @@
 					"response": []
 				}
 			],
-			"auth": {
-				"type": "basic",
-				"basic": [
-					{
-						"key": "password",
-						"value": "x",
-						"type": "string"
-					},
-					{
-						"key": "username",
-						"value": "{{apiKey}}",
-						"type": "string"
-					}
-				]
-			},
 			"event": [
 				{
 					"listen": "prerequest",
@@ -860,21 +830,6 @@
 					"response": []
 				}
 			],
-			"auth": {
-				"type": "basic",
-				"basic": [
-					{
-						"key": "password",
-						"value": "x",
-						"type": "string"
-					},
-					{
-						"key": "username",
-						"value": "{{apiKey}}",
-						"type": "string"
-					}
-				]
-			},
 			"event": [
 				{
 					"listen": "prerequest",
@@ -901,21 +856,6 @@
 		{
 			"name": "Agent roles",
 			"item": [],
-			"auth": {
-				"type": "basic",
-				"basic": [
-					{
-						"key": "password",
-						"value": "x",
-						"type": "string"
-					},
-					{
-						"key": "username",
-						"value": "{{apiKey}}",
-						"type": "string"
-					}
-				]
-			},
 			"event": [
 				{
 					"listen": "prerequest",
@@ -942,21 +882,6 @@
 		{
 			"name": "Agent groups",
 			"item": [],
-			"auth": {
-				"type": "basic",
-				"basic": [
-					{
-						"key": "password",
-						"value": "x",
-						"type": "string"
-					},
-					{
-						"key": "username",
-						"value": "{{apiKey}}",
-						"type": "string"
-					}
-				]
-			},
 			"event": [
 				{
 					"listen": "prerequest",
@@ -984,6 +909,11 @@
 	"auth": {
 		"type": "basic",
 		"basic": [
+			{
+				"key": "password",
+				"value": "x",
+				"type": "string"
+			},
 			{
 				"key": "username",
 				"value": "{{apiKey}}",
