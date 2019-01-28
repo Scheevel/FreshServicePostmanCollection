@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "a47355a1-71e0-4a7d-bcd5-59618e0f4dcc",
+		"_postman_id": "61f8260a-6726-462a-b7ac-770401398579",
 		"name": "FreshService",
 		"description": "apiKey is set here on authorization tab",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -11,6 +11,9 @@
 			"item": [
 				{
 					"name": "List all tickets",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -21,10 +24,7 @@
 								"type": "text"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "{{domainUrl}}/tickets",
 							"host": [
@@ -68,6 +68,9 @@
 				},
 				{
 					"name": "View a ticket",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -78,10 +81,7 @@
 								"type": "text"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "{{domainUrl}}/tickets/{{ticketId}}",
 							"host": [
@@ -186,6 +186,9 @@
 				},
 				{
 					"name": "List all ticket fields",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [
@@ -196,10 +199,7 @@
 								"type": "text"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": ""
-						},
+						"body": {},
 						"url": {
 							"raw": "{{domainUrl}}/ticket_fields",
 							"host": [
@@ -215,6 +215,21 @@
 				}
 			],
 			"description": "Source Value\r\nEmail\t1\r\nPortal\t2\r\nPhone\t3\r\nChat\t4\r\nFeedback widget\t5\r\nYammer\t6\r\nAWS Cloudwatch\t7\r\nPagerduty\t8\r\nWalkup\t9\r\nSlack\t10\r\n\r\nStatus\tValue\r\nOpen\t2\r\nPending\t3\r\nResolved\t4\r\nClosed\t5\r\n\r\nPriorities\tValue\r\nLow\t1\r\nMedium\t2\r\nHigh\t3\r\nUrgent\t4",
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "x",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "{{apiKey}}",
+						"type": "string"
+					}
+				]
+			},
 			"event": [
 				{
 					"listen": "prerequest",
@@ -684,6 +699,21 @@
 					"response": []
 				}
 			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "x",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "{{apiKey}}",
+						"type": "string"
+					}
+				]
+			},
 			"event": [
 				{
 					"listen": "prerequest",
@@ -711,6 +741,250 @@
 			"name": "Agents",
 			"item": [
 				{
+					"name": "Create an agent",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "see documentation for details"
+						},
+						"url": {
+							"raw": "{{domainUrl}}/agents",
+							"host": [
+								"{{domainUrl}}"
+							],
+							"path": [
+								"agents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View an agent",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domainUrl}}/agents/[id]",
+							"host": [
+								"{{domainUrl}}"
+							],
+							"path": [
+								"agents",
+								"[id]"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all agents",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domainUrl}}/agents",
+							"host": [
+								"{{domainUrl}}"
+							],
+							"path": [
+								"agents"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update an agent",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "see documentation for details"
+						},
+						"url": {
+							"raw": "{{domainUrl}}/agents/[id]",
+							"host": [
+								"{{domainUrl}}"
+							],
+							"path": [
+								"agents",
+								"[id]"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an agent",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domainUrl}}/agents/[id]",
+							"host": [
+								"{{domainUrl}}"
+							],
+							"path": [
+								"agents",
+								"[id]"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "x",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "{{apiKey}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "72aedb34-83f4-4555-b8bf-af13e6337548",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "772e1ab0-5fa1-4cd3-aece-6e439efdffb8",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Agent roles",
+			"item": [
+				{
+					"name": "List all roles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domainUrl}}/roles/",
+							"host": [
+								"{{domainUrl}}"
+							],
+							"path": [
+								"roles",
+								""
+							]
+						},
+						"description": "Only users with \"Play God with Super Admin controls\" can access the following APIs"
+					},
+					"response": []
+				},
+				{
+					"name": "View a role",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{domainUrl}}/roles/[id]",
+							"host": [
+								"{{domainUrl}}"
+							],
+							"path": [
+								"roles",
+								"[id]"
+							]
+						},
+						"description": "Only users with \"Play God with Super Admin controls\" can access the following APIs"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "x",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "{{apiKey}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "b05c4c6e-0abf-411d-b51b-6add6751a9c4",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "faef5f97-842e-43dd-8e5a-270e68f64e71",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Agent groups",
+			"item": [
+				{
 					"name": "Create a group",
 					"request": {
 						"method": "POST",
@@ -724,18 +998,18 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "needs body"
+							"raw": "{\r\n  group:{\r\n    \"name\":\"Test group\",\r\n    \"description\":\"This is a test group, please ignore\",\r\n    \"business_hours_id\":null,\r\n    \"escalate_to\":1,\r\n    \"unassigned_for\":\"30m\",\r\n    \"agent_ids\":[\r\n      1,\r\n      2\r\n    ],\r\n    \"auto_ticket_assign\":true\r\n  }\r\n}"
 						},
 						"url": {
-							"raw": "{{domainUrl}}/groups",
+							"raw": "{{domainUrl}}/groups/",
 							"host": [
 								"{{domainUrl}}"
 							],
 							"path": [
-								"groups"
+								"groups",
+								""
 							]
-						},
-						"description": "Note: The agent whose credentials (API key or username/password) are being used to make this API call should be authorised to either view the ticket fields or create a new ticket."
+						}
 					},
 					"response": []
 				},
@@ -749,16 +1023,15 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{domainUrl}}/groups/{{groupId}}",
+							"raw": "{{domainUrl}}/groups/[id]",
 							"host": [
 								"{{domainUrl}}"
 							],
 							"path": [
 								"groups",
-								"{{groupId}}"
+								"[id]"
 							]
-						},
-						"description": "Note: The agent whose credentials (API key or username/password) are being used to make this API call should be authorised to either view the ticket fields or create a new ticket."
+						}
 					},
 					"response": []
 				},
@@ -792,7 +1065,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "need body"
+							"raw": "see documentation for body"
 						},
 						"url": {
 							"raw": "{{domainUrl}}/groups/{{groupId}}",
@@ -830,58 +1103,21 @@
 					"response": []
 				}
 			],
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "72aedb34-83f4-4555-b8bf-af13e6337548",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
+			"auth": {
+				"type": "basic",
+				"basic": [
+					{
+						"key": "password",
+						"value": "x",
+						"type": "string"
+					},
+					{
+						"key": "username",
+						"value": "{{apiKey}}",
+						"type": "string"
 					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"id": "772e1ab0-5fa1-4cd3-aece-6e439efdffb8",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
-		},
-		{
-			"name": "Agent roles",
-			"item": [],
-			"event": [
-				{
-					"listen": "prerequest",
-					"script": {
-						"id": "b05c4c6e-0abf-411d-b51b-6add6751a9c4",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				},
-				{
-					"listen": "test",
-					"script": {
-						"id": "faef5f97-842e-43dd-8e5a-270e68f64e71",
-						"type": "text/javascript",
-						"exec": [
-							""
-						]
-					}
-				}
-			]
-		},
-		{
-			"name": "Agent groups",
-			"item": [],
+				]
+			},
 			"event": [
 				{
 					"listen": "prerequest",
@@ -904,16 +1140,250 @@
 					}
 				}
 			]
+		},
+		{
+			"name": "Locations",
+			"item": [
+				{
+					"name": "Create a location",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View a location",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all locations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a location",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a location",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "View a product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "1adf9b0f-8714-4703-b983-6c3617373c92",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "38e71265-07b2-408f-adef-be443df9d234",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Vendors",
+			"item": [
+				{
+					"name": "Create a vendor",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "View a vendor",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all vendors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a vendor",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a vendor",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "2d820fcd-b66a-48c3-90a3-5a8c3fa41bc3",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "4943b7ba-38e9-4077-91bc-2c18998b07b3",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
 		}
 	],
 	"auth": {
 		"type": "basic",
 		"basic": [
-			{
-				"key": "password",
-				"value": "x",
-				"type": "string"
-			},
 			{
 				"key": "username",
 				"value": "{{apiKey}}",
